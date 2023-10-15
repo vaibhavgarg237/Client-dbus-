@@ -14,7 +14,7 @@ int main() {
     DBusMessage * msg;
  
     dbus_error_init(&error);
-    connection = dbus_bus_get(DBUS_BUS_SESSION, &error);
+    connection = dbus_bus_get(DBUS_BUS_SYSTEM, &error);
     check_and_abort(&error);
  
     dbus_uint32_t serial = 0;
