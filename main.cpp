@@ -17,13 +17,10 @@ int main() {
     connection = dbus_bus_get(DBUS_BUS_SESSION, &error);
     check_and_abort(&error);
  
-    // dbus_bus_request_name(connection, "org.KubOS.PowerManager", 0, &error);
-    check_and_abort(&error);
-  
     dbus_uint32_t serial = 0;
     while(1) {
-        msg = dbus_message_new_signal("/org/KubOS/PowerManager/PowerStatus",
-                                       "org.KubOS.PowerManager.PowerStatus",
+        msg = dbus_message_new_signal("/org/Samsung/VaibhavGarg",
+                                       "org.Samsung.VaibhavGarg",
                                         "VaibhavGarg");
         if (NULL == msg)
         {
@@ -33,11 +30,11 @@ int main() {
         {
             if (!dbus_connection_send(connection, msg, &serial))
             {
-                printf("failed to send\n");
+                cout<<"dbus_connection_send failed to send"<<endl;
             }
             else
             {
-                printf("Sent!\n");
+                cout<<"[Client] Message Sent!"<<endl;
                 sleep(5);
             }   
         }
