@@ -1,3 +1,9 @@
+/*    
+    NOTE: Below code is a Client code using System wide BUS, dbus communication. This is minimal code so as to remove complexities. No warranty whatsover!
+          You may use below code however you like!  💪 Open source! 
+        - Vaibhav Garg
+*/
+
 #include<iostream>
 #include <dbus/dbus.h>
 #include <stdio.h>
